@@ -19,7 +19,7 @@ abstract class Bebida{
     public void paint (Graphics g){
         g.setColor(Color.gray);
         g.fillRect(200,100,50,100); //o llamar a paint de objetos creados
-       
+        
     }
 }
 class Sprite extends Bebida{
@@ -31,7 +31,7 @@ class Sprite extends Bebida{
     }
     public void paint (Graphics g){
         g.setColor(Color.green);
-        g.fillRect(200,100,50,100); //o llamar a paint de objetos creados
+        g.fillRect(75,75,125,250); //o llamar a paint de objetos creados
        
     }
 }
@@ -44,7 +44,7 @@ class CocaCola extends Bebida{
     }
     public void paint (Graphics g){
         g.setColor(Color.red);
-        g.fillRect(200,100,50,100); //o llamar a paint de objetos creados
+        g.fillRect(225,75,125,250); //o llamar a paint de objetos creados
        
     }
 }
@@ -57,7 +57,7 @@ class Fanta extends Bebida{
     }
     public void paint (Graphics g){
         g.setColor(Color.orange);
-        g.fillRect(200,100,50,100); //o llamar a paint de objetos creados
+        g.fillRect(375,75,125,250); //o llamar a paint de objetos creados
        
     }
 }

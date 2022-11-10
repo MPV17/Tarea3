@@ -30,8 +30,10 @@ class Comprador{
         return cuantoVuelto;
     }
     public void paint (Graphics g){
-        g.setColor(Color.blue);
-        g.fillOval(100,100,100,100); //o llamar a paint de objetos creados
+        g.setColor(Color.orange); //o llamar a paint de objetos creados
+        g.fillOval(50,500,150,150);
+        g.fillOval(200,500,150,150);
+        g.fillOval(350,500,150,150);
        
     }
 }

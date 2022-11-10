@@ -8,16 +8,16 @@ import java.awt.Graphics;
 
 
 
-class Expendedor{
+public class Expendedor{
     private Deposito coca;
     private Deposito sprite;
     private Deposito fanta;
+    private DepositoMoneda depoMoneda;
     private int vuelto;
     private int precios;
     public Expendedor(int cantidad ,int precios){
         this.precios = precios;
-        
-        
+        depoMoneda = new DepositoMoneda();
         coca = new Deposito();
         sprite = new Deposito();
         fanta = new Deposito();
@@ -80,10 +80,19 @@ class Expendedor{
         }
         return 0;
     }
+    
+    public void addMoneda(Moneda m){
+        depoMoneda.addMoneda(m);
+    }
+    
     public void paint (Graphics g){
         g.setColor(Color.black);
         g.fillRect(550,0,700,1080); //o llamar a paint de objetos creados
-       
+        g.drawRect(0,0,600,400);
+        coca.paint(g);
+        sprite.paint(g);
+        fanta.paint(g);
+        depoMoneda.paint(g);
     }
 }
 //Expendedor

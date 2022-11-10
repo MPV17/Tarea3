@@ -1,10 +1,11 @@
 package tarea3;
+import java.awt.Graphics;
 import java.util.ArrayList;
 //"Almacen"
 
 class Deposito{
     private ArrayList<Bebida> almacen;
-     public Deposito(){
+    public Deposito(){
         almacen = new ArrayList<Bebida>();
     }
     public void addBebida(Bebida b1){
@@ -22,6 +23,9 @@ class Deposito{
     }
     public int getStock(){
         return almacen.size();
+    }
+    public void paint(Graphics g){
+        almacen.get(0).paint(g);
     }
 }
 //"Almacen"

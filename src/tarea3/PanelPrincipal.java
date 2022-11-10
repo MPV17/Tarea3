@@ -13,28 +13,25 @@ import javax.swing.JPanel;
 public class PanelPrincipal extends JPanel{
     private Comprador com;
     private Expendedor exp;
-    
-    // Variables solo para testear, al final solo deben quedar comp y exp
-    private Moneda m3;
-    private CocaCola coca;
-     // Variables solo para testear, al final solo deben quedar comp y exp
+    private Moneda m1;
+    private Moneda m2 = new Moneda100();
+    private Moneda m3 = new Moneda500();
+    private Moneda m4 = new Moneda1000();
     
     public PanelPrincipal(){
-        m3 = new Moneda1000();
-        exp = new Expendedor(50,500);
-        com = new Comprador(m3,1,exp);
-        coca = new CocaCola(1);
-        
-    this.setBackground(Color.white);
+        m1 = new Moneda500();
+        exp = new Expendedor(3,500);
+        exp.addMoneda(m2);
+        exp.addMoneda(m3);
+        exp.addMoneda(m4);
+        com = new Comprador(m1,2,exp);
+        this.setBackground(Color.white);
     }
     public void paint (Graphics g) { //todo se dibuja a partir de este método
         
         super.paint(g); //llama al método paint al que hace override en la super clase
-        
         com.paint(g); //llama al metodo paint definido en el comprador
         exp.paint(g); //llama al metodo paint definido en el expendedor
-        m3.paint(g);
-        coca.paint(g);
     }
 }
 class Ventana extends JFrame    {
