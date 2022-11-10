@@ -2,6 +2,11 @@ package tarea3;
 
 //Expendedor
 
+import java.awt.Color;
+import java.awt.Graphics;
+
+
+
 
 class Expendedor{
     private Deposito coca;
@@ -74,6 +79,11 @@ class Expendedor{
             case 3: return fanta.getStock();
         }
         return 0;
+    }
+    public void paint (Graphics g){
+        g.setColor(Color.black);
+        g.fillRect(550,0,700,1080); //o llamar a paint de objetos creados
+       
     }
 }
 //Expendedor

@@ -1,6 +1,10 @@
 package tarea3;
 
 //Comprador
+
+import java.awt.Color;
+import java.awt.Graphics;
+
 class Comprador{
     private String queBebiste;
     private int cuantoVuelto;
@@ -24,6 +28,11 @@ class Comprador{
     }
     public int getCuantoVuelto(){
         return cuantoVuelto;
+    }
+    public void paint (Graphics g){
+        g.setColor(Color.blue);
+        g.fillOval(100,100,100,100); //o llamar a paint de objetos creados
+       
     }
 }
 //Comprador
