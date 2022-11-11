@@ -29,13 +29,13 @@ class Deposito{
         int y = 75;
         switch(almacen.get(0).getSerie()){
             case 100: 
-                x=75;
+                x=80;
                 break;
             case 200:
-                x=225;
+                x=230;
                 break;
             case 300:
-                x=375;
+                x=380;
                 break;
         }
         for(int i=0;i<almacen.size();i++){

@@ -61,6 +61,7 @@ class Moneda1000 extends Moneda{
         g.fillOval(x,y,75,75); //o llamar a paint de objetos creados
         g.setColor(Color.BLACK);
         g.drawOval(x,y,75,75);
+        //g.fillRect(x, y, y, y);
        
     }
 }

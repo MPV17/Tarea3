@@ -24,14 +24,17 @@ public class DepositoMoneda{
         return var.size();
     }
     public void paint(Graphics g){
-        g.setColor(Color.BLACK);
-        g.drawRect(575,540,265,95);
-        int x = 585;
+        
+        g.setColor(Color.gray);
+        g.fillRect(615,540,235,95);
+        int x = 620;
         int y = 550;
         for(int i=0;i<var.size();i++){
             var.get(i).paint(g,x,y);
             x=x+15;
         }
+        g.setColor(Color.white);
+        g.drawRect(615,540,235,95);
     }
 }
 

@@ -87,9 +87,12 @@ public class Expendedor{
     
     public void paint (Graphics g){
         g.setColor(Color.gray);
-        g.fillRect(550,0,700,1080); //o llamar a paint de objetos creados
+        g.fillRect(0,400,600,360); //o llamar a paint de objetos creados
         g.setColor(Color.black);
-        g.drawRect(0,0,550,400);
+        g.fillRect(50, 500, 500, 150);
+        g.fillRect(600, 0, 400, 800);
+        g.drawRect(0,0,600,400);
+        g.drawRect(0,400,600,360);
         coca.paint(g);
         sprite.paint(g);
         fanta.paint(g);
