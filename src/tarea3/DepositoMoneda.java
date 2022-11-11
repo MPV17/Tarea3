@@ -1,6 +1,7 @@
 
 package tarea3;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.util.ArrayList;
 
@@ -23,8 +24,14 @@ public class DepositoMoneda{
         return var.size();
     }
     public void paint(Graphics g){
-        for(int i = 0 ; i<var.size(); i++){
-            var.get(i).paint(g);
+        g.setColor(Color.BLACK);
+        g.drawRect(575,540,265,95);
+        int x = 585;
+        int y = 550;
+        for(int i=0;i<var.size();i++){
+            var.get(i).paint(g,x,y);
+            x=x+15;
         }
     }
 }
+

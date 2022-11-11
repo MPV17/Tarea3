@@ -12,7 +12,7 @@ class Moneda{
     public int getValor(){
         return 0;
     }
-    public void paint (Graphics g){
+    public void paint (Graphics g,int x, int y){
         g.setColor(Color.yellow);
         
        
@@ -25,11 +25,12 @@ class Moneda100 extends Moneda{
     public int getValor(){
         return super.getValor() + 100;
     }
-    public void paint (Graphics g){
-        super.paint(g);
+    public void paint (Graphics g,int x, int y){
+        super.paint(g,x,y);
         g.setColor(Color.green);
-        g.fillOval(575,550,75,75); //o llamar a paint de objetos creados
-       
+        g.fillOval(x,y,75,75); //o llamar a paint de objetos creados
+        g.setColor(Color.BLACK);
+        g.drawOval(x,y,75,75);
     }
 }
 class Moneda500 extends Moneda{
@@ -39,11 +40,12 @@ class Moneda500 extends Moneda{
     public int getValor(){
         return super.getValor() + 500;
     }
-    public void paint (Graphics g){
-        super.paint(g);
+    public void paint (Graphics g,int x, int y){
+        super.paint(g,x,y);
         g.setColor(Color.red);
-        g.fillOval(675,550,75,75); //o llamar a paint de objetos creados
-       
+        g.fillOval(x,y,75,75); //o llamar a paint de objetos creados
+        g.setColor(Color.BLACK);
+        g.drawOval(x,y,75,75);
     }
 }
 class Moneda1000 extends Moneda{
@@ -53,10 +55,12 @@ class Moneda1000 extends Moneda{
     public int getValor(){
         return super.getValor() + 1000;
     }
-    public void paint (Graphics g){
-        super.paint(g);
+    public void paint (Graphics g,int x, int y){
+        super.paint(g,x,y);
         g.setColor(Color.blue);
-        g.fillOval(775,550,75,75); //o llamar a paint de objetos creados
+        g.fillOval(x,y,75,75); //o llamar a paint de objetos creados
+        g.setColor(Color.BLACK);
+        g.drawOval(x,y,75,75);
        
     }
 }

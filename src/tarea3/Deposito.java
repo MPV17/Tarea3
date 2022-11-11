@@ -25,7 +25,24 @@ class Deposito{
         return almacen.size();
     }
     public void paint(Graphics g){
-        almacen.get(0).paint(g);
+        int x = 75;
+        int y = 75;
+        switch(almacen.get(0).getSerie()){
+            case 100: 
+                x=75;
+                break;
+            case 200:
+                x=225;
+                break;
+            case 300:
+                x=375;
+                break;
+        }
+        for(int i=0;i<almacen.size();i++){
+            almacen.get(i).paint(g, x, y);
+            x=x-5;
+            y=y+5;
+        }
     }
 }
 //"Almacen"

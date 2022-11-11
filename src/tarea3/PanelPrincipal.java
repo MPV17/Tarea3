@@ -20,7 +20,7 @@ public class PanelPrincipal extends JPanel{
     
     public PanelPrincipal(){
         m1 = new Moneda500();
-        exp = new Expendedor(3,500);
+        exp = new Expendedor(2,500);
         exp.addMoneda(m2);
         exp.addMoneda(m3);
         exp.addMoneda(m4);
