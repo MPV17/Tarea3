@@ -3,6 +3,7 @@ package tarea3;
 //Bebidas-Sabores
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 
 abstract class Bebida{
@@ -35,6 +36,9 @@ class Sprite extends Bebida{
         g.fillRect(x,y,125,250); //o llamar a paint de objetos creados
         g.setColor(Color.BLACK);
         g.drawRect(x, y, 125, 250);
+        g.setColor(Color.white);
+        g.setFont(new Font("TimesRoman", Font.PLAIN, 25));
+        g.drawString("Sprite", x+30, y+80);
        
     }
 }
@@ -50,6 +54,9 @@ class CocaCola extends Bebida{
         g.fillRect(x,y,125,250); //o llamar a paint de objetos creados
         g.setColor(Color.BLACK);
         g.drawRect(x, y, 125, 250);
+        g.setColor(Color.white);
+        g.setFont(new Font("TimesRoman", Font.PLAIN, 25));
+        g.drawString("CocaCola", x+5, y+80);
     }
 }
 class Fanta extends Bebida{
@@ -64,6 +71,9 @@ class Fanta extends Bebida{
         g.fillRect(x,y,125,250); //o llamar a paint de objetos creados
         g.setColor(Color.BLACK);
         g.drawRect(x, y, 125, 250);
+        g.setColor(Color.white);
+        g.setFont(new Font("TimesRoman", Font.PLAIN, 25));
+        g.drawString("Fanta", x+30, y+80);
     }   
 }
 //Bebidas-Sabores

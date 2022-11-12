@@ -1,3 +1,0 @@
-tarea02.PagoInsuficienteException
-tarea02.PagoIncorrectoException
-tarea02.NoHayBebidaException

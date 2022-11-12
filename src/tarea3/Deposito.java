@@ -14,7 +14,7 @@ class Deposito{
     }
     public Bebida getBebida(){
         if (almacen.size()!=0) {
-            Bebida b2 = almacen.remove(0);
+            Bebida b2 = almacen.remove(almacen.size()-1);
             return b2;
         }else return null;
     }
@@ -25,9 +25,10 @@ class Deposito{
         return almacen.size();
     }
     public void paint(Graphics g){
-        int x = 75;
+        int x = 80;
         int y = 95;
-        switch(almacen.get(0).getSerie()){
+        for(int i=0;i<almacen.size();i++){
+            switch(almacen.get(0).getSerie()){
             case 100: 
                 x=80;
                 break;
@@ -38,9 +39,8 @@ class Deposito{
                 x=380;
                 break;
         }
-        for(int i=0;i<almacen.size();i++){
-            almacen.get(i).paint(g, x, y);;
-            y=y-5;
+        almacen.get(i).paint(g, x, y);
+        y=y-5;
         }
     }
 }

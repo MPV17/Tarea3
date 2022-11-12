@@ -7,6 +7,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -33,9 +35,39 @@ public class PanelPrincipal extends JPanel implements MouseListener{
     }
     //Metodo que detecta el click en una zona delimitada, getX y getY ya vienen hechos
     public void mousePressed(MouseEvent me){
-        if(me.getX() >= 0 && me.getX() <= 1000 && me.getY() >= 0 && me.getY() <= 1450){
-            System.out.println("Has dado click");
+        if(me.getX() >= 625 && me.getX() <= 725 && me.getY() >= 100 && me.getY() <= 200){ //boton cocacola
+            try {
+                exp.comprarBebida(m1,1);
+            } catch (PagoIncorrectoException | PagoInsuficienteException | NoHayBebidaException ex) {
+                Logger.getLogger(PanelPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
+        if(me.getX() >= 750 && me.getX() <= 850 && me.getY() >= 100 && me.getY() <= 200){//boton sprite
+            try {
+                exp.comprarBebida(m1,2);
+            } catch (PagoIncorrectoException | PagoInsuficienteException | NoHayBebidaException ex) {
+                Logger.getLogger(PanelPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            }
+        if(me.getX() >= 875 && me.getX() <= 975 && me.getY() >= 100 && me.getY() <= 200){ // boton fanta
+            try {
+            exp.comprarBebida(m1,3);
+            } catch (PagoIncorrectoException | PagoInsuficienteException | NoHayBebidaException ex) {
+            Logger.getLogger(PanelPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }   
+        }
+        
+        if(me.getX() >= 80 && me.getX() <= 205 && me.getY() >= 55 && me.getY() <= 345){
+            exp.llenarDepositoCoca(8);
+        }
+        if(me.getX() >= 230 && me.getX() <= 355 && me.getY() >= 55 && me.getY() <= 345){
+            exp.llenarDepositoSprite(8);
+        }
+        if(me.getX() >= 380 && me.getX() <= 505 && me.getY() >= 55 && me.getY() <= 345){
+            exp.llenarDepositoFanta(8);
+        }
+            
+        
         this.repaint();
     }
     public void paint (Graphics g) { //todo se dibuja a partir de este método

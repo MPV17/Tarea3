@@ -26,7 +26,7 @@ public class DepositoMoneda{
     public void paint(Graphics g){
         
         g.setColor(Color.gray);
-        g.fillRect(615,540,235,95);
+        g.fillRect(615,540,365,95);
         int x = 620;
         int y = 550;
         for(int i=0;i<var.size();i++){
@@ -34,7 +34,7 @@ public class DepositoMoneda{
             x=x+15;
         }
         g.setColor(Color.white);
-        g.drawRect(615,540,235,95);
+        g.drawRect(615,540,365,95);
     }
 }
 

@@ -15,6 +15,7 @@ public class Expendedor{
     private DepositoMoneda depoMoneda;
     private int vuelto;
     private int precios;
+    private Bebida bebidaComprada;
     public Expendedor(int cantidad ,int precios){
         this.precios = precios;
         depoMoneda = new DepositoMoneda();
@@ -35,6 +36,33 @@ public class Expendedor{
             Bebida b1= new Fanta(j+300);
             fanta.addBebida(b1);
             
+        }
+    }
+    public void llenarDepositoCoca(int cantidad){
+        for (int i = 0; i < cantidad; i++) {
+            if(coca.getStock()>cantidad-1){
+                break;
+            }
+            Bebida b1= new CocaCola(i+100);
+            coca.addBebida(b1);
+        }
+    }
+    public void llenarDepositoSprite(int cantidad){
+        for (int k = 0; k < cantidad; k++) {
+            if(sprite.getStock()>cantidad-1){
+                break;
+            }
+            Bebida b1= new Sprite(k+200);
+            sprite.addBebida(b1);
+        }
+    }
+    public void llenarDepositoFanta(int cantidad){
+        for (int j = 0; j < cantidad; j++) {
+            if(fanta.getStock()>cantidad-1){
+                break;
+            }
+            Bebida b1= new Fanta(j+300);
+            fanta.addBebida(b1);
         }
     }
     public Bebida comprarBebida(Moneda m ,int seleccion) throws PagoIncorrectoException, PagoInsuficienteException, NoHayBebidaException {
@@ -93,10 +121,21 @@ public class Expendedor{
         g.fillRect(600, 0, 400, 800);
         g.drawRect(0,0,600,400);
         g.drawRect(0,400,600,360);
+        g.setColor(Color.red);
+        g.fillRect(625,100,100,100);
+        g.setColor(Color.green);
+        g.fillRect(750,100,100,100);
+        g.setColor(Color.orange);
+        g.fillRect(875,100,100,100);
+        g.setColor(Color.white);
+        g.drawString("CocaCola",645,150);
+        g.drawString("Sprite",785,150);
+        g.drawString("Fanta",905,150);
         coca.paint(g);
         sprite.paint(g);
         fanta.paint(g);
         depoMoneda.paint(g);
+        
     }
 }
 //Expendedor
