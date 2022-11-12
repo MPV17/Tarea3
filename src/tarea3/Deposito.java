@@ -26,7 +26,7 @@ class Deposito{
     }
     public void paint(Graphics g){
         int x = 75;
-        int y = 75;
+        int y = 95;
         switch(almacen.get(0).getSerie()){
             case 100: 
                 x=80;
@@ -39,9 +39,8 @@ class Deposito{
                 break;
         }
         for(int i=0;i<almacen.size();i++){
-            almacen.get(i).paint(g, x, y);
-            x=x-5;
-            y=y+5;
+            almacen.get(i).paint(g, x, y);;
+            y=y-5;
         }
     }
 }

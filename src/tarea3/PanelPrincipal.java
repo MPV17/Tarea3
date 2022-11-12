@@ -41,8 +41,8 @@ public class PanelPrincipal extends JPanel implements MouseListener{
     public void paint (Graphics g) { //todo se dibuja a partir de este método
         
         super.paint(g); //llama al método paint al que hace override en la super clase
-        com.paint(g); //llama al metodo paint definido en el comprador
         exp.paint(g); //llama al metodo paint definido en el expendedor
+        com.paint(g); //llama al metodo paint definido en el comprador
     }
     //Esta parte el implements MouseListener obliga a implementarla
 
@@ -79,7 +79,7 @@ class Ventana extends JFrame    {
       this.add(bp,BorderLayout.EAST); //se agrega al sur
       
       this.setDefaultCloseOperation(EXIT_ON_CLOSE);//activar cierre en la X 
-      this.setSize(1000,800); //se pueden pasar como parámetros del constructor
+      this.setSize(1750,800); //se pueden pasar como parámetros del constructor
       this.setVisible(true);  //para que se abra y sea visible     
     
   }  
