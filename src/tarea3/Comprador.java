@@ -31,6 +31,9 @@ class Comprador{
     }
     public void paint (Graphics g){
         g.setColor(Color.orange); //o llamar a paint de objetos creados
+        g.fillOval(1350,100,200,200);
+        g.setColor(Color.orange); //o llamar a paint de objetos creados
+        g.fillOval(1350,299,200,400);
     }
 }
 //Comprador

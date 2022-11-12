@@ -5,12 +5,15 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 
-public class PanelPrincipal extends JPanel{
+public class PanelPrincipal extends JPanel implements MouseListener{
+    
     private Comprador com;
     private Expendedor exp;
     private Moneda m1;
@@ -26,6 +29,14 @@ public class PanelPrincipal extends JPanel{
         exp.addMoneda(m4);
         com = new Comprador(m1,2,exp);
         this.setBackground(Color.white);
+        this.addMouseListener(this); //Hace posible el dar click
+    }
+    //Metodo que detecta el click en una zona delimitada, getX y getY ya vienen hechos
+    public void mousePressed(MouseEvent me){
+        if(me.getX() >= 0 && me.getX() <= 1000 && me.getY() >= 0 && me.getY() <= 1450){
+            System.out.println("Has dado click");
+        }
+        this.repaint();
     }
     public void paint (Graphics g) { //todo se dibuja a partir de este método
         
@@ -33,7 +44,31 @@ public class PanelPrincipal extends JPanel{
         com.paint(g); //llama al metodo paint definido en el comprador
         exp.paint(g); //llama al metodo paint definido en el expendedor
     }
+    //Esta parte el implements MouseListener obliga a implementarla
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
+
+
+
 class Ventana extends JFrame    {
   public Ventana(){
       this.setLayout(new BorderLayout());
@@ -49,7 +84,7 @@ class Ventana extends JFrame    {
     
   }  
 }
-class PanelBotones extends JPanel {
+class PanelBotones extends JPanel{
     BotonFin bf;
     BotonFin df;
     public PanelBotones(){
