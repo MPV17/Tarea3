@@ -76,23 +76,4 @@ class Fanta extends Bebida{
         g.drawString("Fanta", x+30, y+80);
     }
 }
-
-/*class Kem extends Bebida{
-    public Kem(int serie){
-        super(serie);
-    }
-    public String beber(){
-        return super.beber() + "kem";
-    }
-    public void paint (Graphics g,int x,int y){
-        g.setColor(Color.yellow);
-        g.fillRect(x,y,125,250); //o llamar a paint de objetos creados
-        g.setColor(Color.BLACK);
-        g.drawRect(x, y, 125, 250);
-        g.setColor(Color.white);
-        g.setFont(new Font("TimesRoman", Font.PLAIN, 25));
-        g.drawString("kem", x+30, y+80);
-
-    }
-}*/
 //Bebidas-Sabores
