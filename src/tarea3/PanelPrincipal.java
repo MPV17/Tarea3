@@ -103,6 +103,7 @@ public class PanelPrincipal extends JPanel implements MouseListener{
             if (d==true) {
                 System.out.println(com.getQueBebiste());
             }
+            d=false;
             
         }
         this.repaint();
