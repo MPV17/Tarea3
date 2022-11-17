@@ -12,6 +12,7 @@ public class PanelPrincipal extends JPanel implements MouseListener{
     boolean a;
     boolean b;
     boolean c;
+    boolean d;
 
     private Comprador com;
     private Expendedor exp;
@@ -89,6 +90,7 @@ public class PanelPrincipal extends JPanel implements MouseListener{
             a = false;
             b = false;
             c = false;
+            d = true;
             //System.out.println("has dado click");
             
 
@@ -98,7 +100,10 @@ public class PanelPrincipal extends JPanel implements MouseListener{
         
         
         if(me.getX() >= 1150 && me.getX() <= 1350 && me.getY() >= 50 && me.getY() <= 650){ //Beber dando click al comprador
-            System.out.println(com.getQueBebiste());
+            if (d==true) {
+                System.out.println(com.getQueBebiste());
+            }
+            
         }
         this.repaint();
     }
