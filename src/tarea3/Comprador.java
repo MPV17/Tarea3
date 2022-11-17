@@ -9,7 +9,7 @@ class Comprador{
     private String queBebiste;
     private int cuantoVuelto;
     public Comprador(Moneda m ,int seleccion , Expendedor maquina){
-        /*this.cuantoVuelto=0;
+        this.cuantoVuelto=0;
         try{
             Bebida mibebida = maquina.comprarBebida(m, seleccion);
             queBebiste =  mibebida.beber();
@@ -20,7 +20,11 @@ class Comprador{
             
         }catch(NoHayBebidaException | PagoIncorrectoException | PagoInsuficienteException e){
             System.out.println(e.getMessage());
-        }*/
+        }
+    }
+
+    public void setQueBebiste(String queBebiste) {
+        this.queBebiste = queBebiste;
     }
     
     public String getQueBebiste(){
@@ -31,12 +35,12 @@ class Comprador{
     }
     public void paint (Graphics g){
         g.setColor(Color.orange); //o llamar a paint de objetos creados
-        g.fillOval(1200,50,200,200);
-        g.fillOval(1200,249,200,400);
-        g.fillOval(1050,300,200,75);
-        g.fillOval(1350,300,200,75);
-        g.fillOval(1200,600,75,200);
-        g.fillOval(1325,600,75,200);
+        g.fillOval(1150,50,200,200);
+        g.fillOval(1150,249,200,400);
+        g.fillOval(1000,300,200,75);
+        g.fillOval(1300,300,200,75);
+        g.fillOval(1150,600,75,200);
+        g.fillOval(1275,600,75,200);
     }
 }
 //Comprador

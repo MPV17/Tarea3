@@ -22,6 +22,7 @@ public class Expendedor{
         coca = new Deposito();
         sprite = new Deposito();
         fanta = new Deposito();
+        bebidaComprada = null;
         for (int i = 0; i < cantidad; i++) {
             Bebida b1= new CocaCola(i+100);
             coca.addBebida(b1);
@@ -112,6 +113,24 @@ public class Expendedor{
     public void addMoneda(Moneda m){
         depoMoneda.addMoneda(m);
     }
+    public void pasarUnicaCoca(){
+        bebidaComprada = coca.getBebida();
+    }
+    public void pasarUnicaSprite(){
+        bebidaComprada = sprite.getBebida();
+    }
+    public void pasarUnicaFanta(){
+        bebidaComprada = fanta.getBebida();
+    }
+
+    public Bebida getBebidaComprada() {
+        return bebidaComprada;
+    }
+    
+    
+    
+    
+    
     
     public void paint (Graphics g){
         g.setColor(Color.gray);
@@ -134,8 +153,8 @@ public class Expendedor{
         coca.paint(g);
         sprite.paint(g);
         fanta.paint(g);
-        depoMoneda.paint(g);
-        
+        depoMoneda.paint(g);  
     }
 }
+    
 //Expendedor
