@@ -13,12 +13,14 @@ public class Expendedor{
     private Deposito sprite;
     private Deposito fanta;
     private DepositoMoneda depoMoneda;
+    private DepositoMoneda depoMonedaVuelto;
     private int vuelto;
     private int precios;
     private Bebida bebidaComprada;
     public Expendedor(int cantidad ,int precios){
         this.precios = precios;
         depoMoneda = new DepositoMoneda();
+        depoMonedaVuelto = new DepositoMoneda();
         coca = new Deposito();
         sprite = new Deposito();
         fanta = new Deposito();
@@ -66,7 +68,8 @@ public class Expendedor{
             fanta.addBebida(b1);
         }
     }
-    public Bebida comprarBebida(Moneda m ,int seleccion) throws PagoIncorrectoException, PagoInsuficienteException, NoHayBebidaException {
+    public Bebida comprarBebida(int seleccion) throws PagoIncorrectoException, PagoInsuficienteException, NoHayBebidaException {
+        Moneda m = new Moneda1000();
         if (m == null) {
             throw new PagoIncorrectoException("Pago no valido");
             
@@ -77,6 +80,7 @@ public class Expendedor{
             
         }
             if (m.getValor() == precios) {
+                depoMoneda.addMoneda(m);
                 switch (seleccion){
                    case 1: return coca.getBebida();
                    case 2: return sprite.getBebida();
@@ -84,6 +88,11 @@ public class Expendedor{
                 }
             }else if(m.getValor() > precios){
                 vuelto = m.getValor() - precios;
+                for(int i=0;i<vuelto/100;i++){
+                    Moneda n = new Moneda100();
+                    depoMonedaVuelto.addMoneda(n);
+                }
+                depoMoneda.addMoneda(m);
                 switch (seleccion){
                      case 1: return coca.getBebida();
                      case 2: return sprite.getBebida();
@@ -92,10 +101,11 @@ public class Expendedor{
             }
         return null;
     }
+    
     public Moneda getVuelto(){
         if (vuelto!=0) {
             vuelto = vuelto - 100;
-            return new Moneda100();
+            return depoMonedaVuelto.getMoneda();
         }else return null;
     }
     public int getCuentaDeVuelto(){
@@ -153,7 +163,8 @@ public class Expendedor{
         coca.paint(g);
         sprite.paint(g);
         fanta.paint(g);
-        depoMoneda.paint(g);  
+        depoMoneda.paint(g,615,540);
+        depoMonedaVuelto.paint(g,615,440);
     }
 }
     

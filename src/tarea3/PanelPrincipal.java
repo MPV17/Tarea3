@@ -20,16 +20,8 @@ public class PanelPrincipal extends JPanel implements MouseListener{
 
     
     public PanelPrincipal(){
-        m1 = new Moneda500();
         exp = new Expendedor(8,500);
-        com = new Comprador(m1,2,exp);
-        
-        
-        
-        
-        
-        
-        
+        com = new Comprador(2,exp);
         this.setBackground(Color.white);
         this.addMouseListener(this); //Hace posible el dar click
     }
@@ -38,7 +30,7 @@ public class PanelPrincipal extends JPanel implements MouseListener{
         if(me.getX() >= 625 && me.getX() <= 725 && me.getY() >= 100 && me.getY() <= 200){ //boton cocacola
             try {
                 if (a==false && b==false && c==false) {
-                    com.setQueBebiste((exp.comprarBebida(m1,1)).beber());
+                    com.setQueBebiste(exp.comprarBebida(1).beber());
                     a = true;
                 }
                 
@@ -52,7 +44,7 @@ public class PanelPrincipal extends JPanel implements MouseListener{
         if(me.getX() >= 750 && me.getX() <= 850 && me.getY() >= 100 && me.getY() <= 200){//boton sprite
             try {
                 if(a==false && b==false && c==false){
-                    com.setQueBebiste((exp.comprarBebida(m1,2)).beber());
+                    com.setQueBebiste((exp.comprarBebida(2)).beber());
                     b = true;
                 }
                 
@@ -65,7 +57,7 @@ public class PanelPrincipal extends JPanel implements MouseListener{
         if(me.getX() >= 875 && me.getX() <= 975 && me.getY() >= 100 && me.getY() <= 200){ // boton fanta
             try {
                 if (a==false && b==false && c==false) {
-                    com.setQueBebiste((exp.comprarBebida(m1,3)).beber());
+                    com.setQueBebiste((exp.comprarBebida(3)).beber());
                     c = true;
                 }
             
@@ -91,9 +83,9 @@ public class PanelPrincipal extends JPanel implements MouseListener{
             b = false;
             c = false;
             d = true;
-            //System.out.println("has dado click");
-            
-
+        }
+        if (me.getX()>= 615 && me.getX() <= 980 && me.getY() >= 440 && me.getY()<= 535){
+            exp.getVuelto();
         }
         
         

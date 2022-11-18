@@ -23,18 +23,17 @@ public class DepositoMoneda{
     public int size(){
         return var.size();
     }
-    public void paint(Graphics g){
-        
+    public void paint(Graphics g,int xdepo,int ydepo){
         g.setColor(Color.gray);
-        g.fillRect(615,540,365,95);
-        int x = 620;
-        int y = 550;
+        g.fillRect(xdepo,ydepo,365,95);
+        int x = xdepo+5;
+        int y = ydepo+10;
         for(int i=0;i<var.size();i++){
             var.get(i).paint(g,x,y);
             x=x+15;
         }
         g.setColor(Color.white);
-        g.drawRect(615,540,365,95);
+        g.drawRect(xdepo,ydepo,365,95);
     }
 }
 
