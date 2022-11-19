@@ -13,6 +13,7 @@ public class PanelPrincipal extends JPanel implements MouseListener{
     boolean b;
     boolean c;
     boolean d;
+    boolean e;
 
     private Comprador com;
     private Expendedor exp;
@@ -93,7 +94,7 @@ public class PanelPrincipal extends JPanel implements MouseListener{
         
         if(me.getX() >= 1150 && me.getX() <= 1350 && me.getY() >= 50 && me.getY() <= 650){ //Beber dando click al comprador
             if (d==true) {
-                System.out.println(com.getQueBebiste());
+                e=true;
             }
             d=false;
             
@@ -146,6 +147,11 @@ public class PanelPrincipal extends JPanel implements MouseListener{
             g.setColor(Color.white);
             g.drawString("Fanta", 250, 600);
         }//Se dibuja una Fanta en la ranura de recogida, cuando c == false, se retira la Fanta  
+        if (e==true) {
+            g.setColor(Color.black);
+            g.drawString(com.getQueBebiste(), 1000, 40);
+            e=false;
+        }
     }
 
     
