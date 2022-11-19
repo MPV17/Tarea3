@@ -103,7 +103,7 @@ public class Expendedor{
     }
     
     public Moneda getVuelto(){
-        if (vuelto!=0) {
+        if (depoMonedaVuelto.size()>0) {
             vuelto = vuelto - 100;
             return depoMonedaVuelto.getMoneda();
         }else return null;
